@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +8,25 @@
 </head>
 <body>
     <header>
-        <img src="/static/images/logo.webp" alt="Logo" class="logo">
-        <h1>Secure Diary</h1>
+        <div class="logo-container">
+            <img src="/static/images/logo.webp" alt="Logo" class="logo">
+            <h1>Secure Diary</h1>
+        </div>
     </header>
 
-    <div class="view-entry">
-        <h2>{{ entry.title }}</h2>
-        <p>{{ entry.content }}</p>
+    <div class="view-entry-container">
+        <div class="view-entry-content">
+            <h2>{{ entry.title }}</h2>
+            <p>{{ entry.content }}</p>
 
-        {% if entry.image %}
-            <div class="entry-image">
-                <img src="{{ entry.image }}" alt="Image" class="entry-img">
-            </div>
-        {% endif %}
+            {% if entry.image %}
+                <div class="entry-image">
+                    <img src="{{ entry.image }}" alt="Image" class="entry-img">
+                </div>
+            {% endif %}
 
-        <a href="/" class="back-to-home">Вернуться на главную</a>
+            <a href="/" class="back-to-home">Back to Home</a>
+        </div>
     </div>
 </body>
 </html>

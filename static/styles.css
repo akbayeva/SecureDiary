@@ -5,15 +5,34 @@ body {
     padding: 0;
     background: linear-gradient(to right, #FFB6C1, #F5F5DC); /* Пастельные розовый и бежевый */
     color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; /* Вертикальное расположение элементов */
+}
+
+/* Основной контейнер, который центрует весь контент */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Ограничиваем максимальную ширину */
+    padding: 20px;
 }
 
 /* Заголовок и логотип */
 header {
     text-align: center;
+    justify-content: center;
     padding: 50px;
     background: rgba(255, 255, 255, 0.9); /* полупрозрачный фон для шапки */
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
+    max-width: 1200px; /* Ограничиваем максимальную ширину шапки */
     margin: 0 auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -30,16 +49,6 @@ h1 {
     margin: 0;
 }
 
-/* Стили для ссылок */
-a {
-    text-decoration: none;
-    color: #4A90E2;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 /* Стилизация карточек для записей */
 ul {
     list-style-type: none;
@@ -47,6 +56,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
 li {
@@ -98,37 +108,6 @@ button i {
     margin-bottom: 20px;
 }
 
-/* Формы */
-form {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-    margin: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-form input:focus, form textarea:focus {
-    border-color: #FF6F61;
-}
-
 /* Респонсивный дизайн */
 @media (max-width: 768px) {
     h1 {
@@ -153,7 +132,7 @@ form input:focus, form textarea:focus {
     }
 }
 
-/* Стили для формы на странице добавления записи */
+/* Стиль для формы на странице добавления записи */
 form {
     background-color: #ffffff;
     padding: 30px;
@@ -164,6 +143,7 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Стили для полей формы */
 form label {
     font-size: 1rem;
     font-weight: bold;
@@ -180,9 +160,8 @@ form input, form textarea {
     margin-bottom: 15px;
 }
 
-form input[type="file"] {
-    border: none;
-    padding: 10px;
+form input:focus, form textarea:focus {
+    border-color: #FF6F61;
 }
 
 /* Стиль для изображения записи */
@@ -197,7 +176,6 @@ form input[type="file"] {
     border-radius: 10px;
 }
 
-/* Стили для кнопок и ссылок */
 a.back-to-home {
     display: inline-block;
     margin-top: 20px;
@@ -212,53 +190,45 @@ a.back-to-home:hover {
     background-color: #357ABD;
 }
 
-button {
-    background-color: #FF6F61;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: inline-flex;
+/* Контейнер для страницы добавления записи */
+.container {
+    width: 80%;
+    margin: 20px auto; /* Центрирование контейнера с формой */
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    justify-content: flex-start; /* Выравнивание элементов сверху */
 }
 
-button:hover {
-    background-color: #E55C4F;
+/* Стиль для формы */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px; /* Ограничение ширины формы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Контейнер для записи */
+.view-entry-container {
+    width: 80%;
+    max-width: 900px; /* Ограничиваем максимальную ширину */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-button i {
-    margin-right: 10px;
+.view-entry-content {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для страницы просмотра записи (view_entry) */
-.view-entry {
-    max-width: 800px; /* Ограничиваем максимальную ширину контента */
-    margin: 30px auto; /* Центрируем блок с записью */
-    padding: 20px; /* Добавляем отступы внутри блока */
-    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
-    border-radius: 10px; /* Скругленные углы */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для блока */
-}
-
-.view-entry h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center; /* Центрируем заголовок */
-}
-
-.view-entry p {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6; /* Увеличиваем межстрочный интервал для удобочитаемости */
-    margin-bottom: 20px;
-}
-
+/* Стили для изображения записи */
 .entry-image {
-    text-align: center; /* Центрируем изображение */
+    text-align: center;
     margin: 20px 0;
 }
 
@@ -268,6 +238,7 @@ button i {
     border-radius: 10px;
 }
 
+/* Ссылка "Вернуться на главную" */
 a.back-to-home {
     display: inline-block;
     margin-top: 20px;
@@ -276,24 +247,24 @@ a.back-to-home {
     color: white;
     border-radius: 5px;
     text-decoration: none;
-    text-align: center; /* Центрируем текст на кнопке */
 }
 
 a.back-to-home:hover {
     background-color: #357ABD;
 }
 
-.entry-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
+/* Респонсивный дизайн */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
 
-button {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+    .view-entry-container {
+        padding: 10px;
+    }
 
-button:hover {
-    background-color: #E55C4F;
-    transform: scale(1.05);
+    .view-entry-content {
+        width: 100%;
+        padding: 20px;
+    }
 }

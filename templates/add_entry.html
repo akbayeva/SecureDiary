@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/styles.css">
-    <title>Добавить запись</title>
+    <title>Add Entry</title>
 </head>
 <body>
+    <!-- Container for logo and title -->
     <header>
         <img src="/static/images/logo.webp" alt="Logo" class="logo">
-        <h1>Добавить запись</h1>
+        <h1>Add Entry</h1>
     </header>
 
+    <!-- Main container for the add entry form -->
     <div class="container">
         <form method="POST" enctype="multipart/form-data">
-            <label for="title">Заголовок:</label>
+            <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
 
-            <label for="content">Содержание:</label>
+            <label for="content">Content:</label>
             <textarea id="content" name="content" required></textarea>
 
-            <label for="image">Загрузить изображение:</label>
+            <label for="image">Upload Image:</label>
             <input type="file" id="image" name="image" accept="image/*">
 
-            <button type="submit"><i class="fa fa-save"></i> Сохранить</button>
+            <button type="submit"><i class="fa fa-save"></i> Save</button>
         </form>
     </div>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +8,26 @@
     <title>Secure Diary</title>
 </head>
 <body>
-    <header>
-        <img src="/static/images/logo.webp" alt="Logo" class="logo">
-        <h1>Secure Diary</h1>
-    </header>
+    <div class="main-container">
+        <header>
+            <img src="/static/images/logo.webp" alt="Logo" class="logo">
+            <h1>Secure Diary</h1>
+        </header>
 
-    <div class="container">
-        <div class="add-button-container">
-            <a href="/add">
-                <button><i class="fa fa-plus"></i> Добавить запись</button>
-            </a>
+        <div class="container">
+            <div class="add-button-container">
+                <a href="/add">
+                    <button><i class="fa fa-plus"></i>Add Entry</button>
+                </a>
+            </div>
+            <ul>
+                {% for entry in entries %}
+                <li>
+                    <a href="/entry/{{ entry.id }}">{{ entry.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-        <ul>
-            {% for entry in entries %}
-            <li>
-                <a href="/entry/{{ entry.id }}">{{ entry.title }}</a>
-            </li>
-            {% endfor %}
-        </ul>
     </div>
 </body>
 </html>
